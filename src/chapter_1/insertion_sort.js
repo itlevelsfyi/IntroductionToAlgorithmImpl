@@ -9,4 +9,4 @@ const insertion_sort = A => {
     A[i+1] = key
   }
 }
-export default insertion_sort
+module.exports = insertion_sort
