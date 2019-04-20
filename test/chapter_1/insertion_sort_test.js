@@ -1,3 +1,4 @@
+const assert = require('assert')
 const insertion_sort = require('../../src/chapter_1/insertion_sort')
 
 describe('Basic Sort Test', () => {
