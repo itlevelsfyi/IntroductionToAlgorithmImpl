@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": false,
   "scripts": {
-    "test": 'mocha --timeout 5000 -R min'
+    "test": "mocha --timeout 5000 -R min"
   },
   "dependencies": {
     "mocha": "^6.0.2",
