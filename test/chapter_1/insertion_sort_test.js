@@ -5,7 +5,7 @@ describe('Basic Sort Test', () => {
     let arr = [31, 41, 59, 26, 41, 58]
     insertion_sort(arr)
     for (let i = 1; i < arr.length; i++) {
-      assert(arr[i] >= arr[i-1]
+      assert(arr[i] >= arr[i-1])
     }
     done()
   })
