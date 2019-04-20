@@ -1,4 +1,4 @@
-import insertion_sort from '../../src/chapter_1/insertion_sort'
+const insertion_sort = require('../../src/chapter_1/insertion_sort')
 
 describe('Basic Sort Test', () => {
   it('Exercise-2.1.1', done => {
