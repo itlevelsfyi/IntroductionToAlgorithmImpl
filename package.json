@@ -1,0 +1,19 @@
+{
+  "name": "Introduction_to_Algorithm_Impl",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "test": "npm run test"
+  },
+  "dependencies": {
+    "mocha": "^6.1.2",
+    "nodemon": "^1.18.10",
+    "query-parse": "^2.0.0",
+    "query-string": "^6.4.2",
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-component": "^1.1.1",
+    "eslint": "^5.8.0",
+  }
+}
