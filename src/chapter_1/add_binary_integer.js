@@ -1,8 +1,10 @@
 const add_binary_integer = (A, B) => {
   if (!Array.isArray(A) || A.length <= 0) {
-    return B.unshift(0)
+    B.unshift(0)
+    return B
   } else if (!Array.isArray(B) || B.length <= 0) {
-    return A.unshift(0)
+    A.unshift(0)
+    return A
   } else {
     let carry = 0
     let result = []
