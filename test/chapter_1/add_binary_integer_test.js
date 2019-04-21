@@ -22,13 +22,13 @@ describe('Add Binary Integer Test', () => {
   it('One of array is empty', done => {
     let A = [1,0,1]
     let B = []
-    assert(compare_array(add_binary_integer(A,B), [0,1,0,1])
+    assert(compare_array(add_binary_integer(A,B), [0,1,0,1]))
     done()
   })
   it('Normal addition', done => {
     let A = [1,0,1]
     let B = [1,0]
-    assert(compare_array(add_binary_integer(A,B), [0,1,1,1])
+    assert(compare_array(add_binary_integer(A,B), [0,1,1,1]))
     done()
   })
 })
