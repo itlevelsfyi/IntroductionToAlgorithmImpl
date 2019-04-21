@@ -12,7 +12,7 @@ describe('Basic Search Test', () => {
   it('Exercise-2.1.2-not-find', done => {
     let arr = [...data]
     let index = linear_search(arr, 999)
-    assert(index === nil)
+    assert(index === null)
     done()
   })
 })
