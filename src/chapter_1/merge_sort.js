@@ -1,5 +1,5 @@
 const merge = (A, p, q, r) => {
-  const n1 = q - p + 1
+  const n1 = q - p
   const n2 = r - q
   let L = []
   let R = []
@@ -15,7 +15,7 @@ const merge = (A, p, q, r) => {
   
   let i = 0
   let j = 0
-  for (let k = p; k <= r; k++) {
+  for (let k = p; k < r; k++) {
     if (L[i] <= R[j]) {
       A[k] = L[i]
       i++
@@ -36,7 +36,7 @@ const merge_sort_impl = (A, p, r) => {
 }
 
 const merge_sort = A => {
-  merge_sort_impl(A, 0, A.length - 1)
+  merge_sort_impl(A, 0, A.length)
 }
 
 module.exports = merge_sort
