@@ -1,4 +1,5 @@
 const merge = (A, p, q, r) => {
+  console.log(`merge p=${p} q=${q} r=${r}`)
   const n1 = q - p + 1
   const n2 = r - q
   let L = []
