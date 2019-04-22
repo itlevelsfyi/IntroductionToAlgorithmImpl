@@ -35,7 +35,9 @@ const merge_sort_impl = (A, p, r) => {
     q = Math.floor((p + r) / 2)
     console.log(`q=${q}`)
     merge_sort_impl(A, p, q)
-    merge_sort_impl(A, q + 1, r)
+    const z = q + 1
+    console.log(`z=${z}`)
+    merge_sort_impl(A, z, r)
     merge(A, p, q, r)
   }
 }
