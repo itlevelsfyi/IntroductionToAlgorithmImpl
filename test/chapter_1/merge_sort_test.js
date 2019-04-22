@@ -6,7 +6,6 @@ describe('Merge sort test', () => {
   it('Basic sort test', done => {
     let arr = [...data]
     merge_sort(arr)
-    console.log(`sorted = ${JSON.stringify(arr)}`)
     for (let i = 1; i < arr.length; i++) {
       assert(arr[i] >= arr[i-1])
     }
