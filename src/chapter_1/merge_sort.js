@@ -33,6 +33,7 @@ const merge_sort_impl = (A, p, r) => {
   console.log(`merge_sort p=${p} r=${r}`)
   if (p < r) {
     q = Math.floor((p + r) / 2)
+    console.log(`q=${q}`)
     merge_sort_impl(A, p, q)
     merge_sort_impl(A, q + 1, r)
     merge(A, p, q, r)
