@@ -17,9 +17,11 @@ const merge = (A, p, q, r) => {
   let j = 0
   for (let k = p; k <= r; k++) {
     if (L[i] <= R[j]) {
+      console.log(`A[${k}] = L[${i}] ${L[i]}`)
       A[k] = L[i]
       i++
     } else {
+      console.log(`A[${k}] = R[${j}] ${R[j]}`)
       A[k] = R[j]
       j++
     }
