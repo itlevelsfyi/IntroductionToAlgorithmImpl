@@ -1,5 +1,4 @@
 const merge = (A, p, q, r) => {
-  console.log(`merge p=${p} q=${q} r=${r}`)
   const n1 = q - p + 1
   const n2 = r - q
   let L = []
@@ -18,11 +17,9 @@ const merge = (A, p, q, r) => {
   let j = 0
   for (let k = p; k <= r; k++) {
     if (L[i] <= R[j]) {
-      console.log(`A[${k}] = L[${i}] ${L[i]}`)
       A[k] = L[i]
       i++
     } else {
-      console.log(`A[${k}] = R[${j}] ${R[j]}`)
       A[k] = R[j]
       j++
     }
@@ -30,14 +27,10 @@ const merge = (A, p, q, r) => {
 }
 
 const merge_sort_impl = (A, p, r) => {
-  console.log(`merge_sort p=${p} r=${r}`)
   if (p < r) {
     const q = Math.floor((p + r) / 2)
-    console.log(`q=${q}, .q=${(p+r)/2}`)
     merge_sort_impl(A, p, q)
-    const z = q + 1
-    console.log(`p=${p}, r=${r}, q=${q}, z=q+1, z=${z}`)
-    merge_sort_impl(A, z, r)
+    merge_sort_impl(A, q+1, r)
     merge(A, p, q, r)
   }
 }
