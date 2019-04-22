@@ -15,7 +15,7 @@ const merge = (A, p, q, r) => {
   
   let i = 0
   let j = 0
-  for (let k = p; k < r; k++) {
+  for (let k = p; k <= r; k++) {
     if (L[i] <= R[j]) {
       A[k] = L[i]
       i++
