@@ -30,7 +30,7 @@ const merge_sort_impl = (A, p, r) => {
   if (p < r) {
     q = Math.floor((p + r) / 2)
     merge_sort_impl(A, p, q)
-    merge_sort_impl(A, q+1, r)
+    merge_sort_impl(A, q, r)
     merge(A, p, q, r)
   }
 }
