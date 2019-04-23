@@ -12,18 +12,18 @@ const merge = (A, p, q, r) => {
   let i = 0
   let j = 0
   let k = p
-  while (i < n1 && j < n2) {
-    if (A[i] <= A[j]) {
-      A[k++] = A[i++]
+  while (i < n1 && j < n2 && k <= p) {
+    if (L[i] <= R[j]) {
+      A[k++] = L[i++]
     } else {
-      A[k++] = A[j++]
+      A[k++] = R[j++]
     }
   }
   while (i < n1) {
-    A[k++] = A[i++]
+    A[k++] = L[i++]
   }
   while (j < n2) {
-    A[k++] = A[j++]
+    A[k++] = R[j++]
   }
 }
 
