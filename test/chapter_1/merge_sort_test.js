@@ -4,7 +4,6 @@ const sort_data = require('../sort_data/sort_data')
 const num_ascending = require('../sort_data/num_ascending')
 
 describe('Merge sort test', () => {
-  let data = [31, 41, 59, 26, 41, 58]
   it('Basic sort test', done => {
     sort_data.forEach(data => {
       let arr = [...data]
