@@ -11,7 +11,7 @@ const selection_sort = A => {
       if (!min_idx) {
         min_idx = j
       }
-      if (min_idx && A[min_idx] > A[j]) {
+      if (min_idx && (A[min_idx] - A[j]) > 0) {
         min_idx = j
       }
     }
