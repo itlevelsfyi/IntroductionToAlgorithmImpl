@@ -1,4 +1,6 @@
-const selection_sort = A => {
+const num_ascending = require('../../test/sort_data/num_ascending')
+
+const selection_sort = (A, sort_method = num_ascending) => {
   const swap = (arr, i, j) => {
     const temp = arr[i]
     arr[i] = arr[j]
@@ -11,7 +13,7 @@ const selection_sort = A => {
       if (!min_idx) {
         min_idx = j
       }
-      if (min_idx && (A[min_idx] - A[j]) > 0) {
+      if (min_idx && sort_method(+A[min_idx], +A[j]) > 0) {
         min_idx = j
       }
     }
