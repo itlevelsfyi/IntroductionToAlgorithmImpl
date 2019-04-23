@@ -13,7 +13,8 @@ const selection_sort = (A, sort_method = num_ascending) => {
       if (!min_idx) {
         min_idx = j
       }
-      if (min_idx && sort_method(+A[min_idx], +A[j]) > 0) {
+      let [min, aj] = [+A[min_idx], +A[j]]
+      if (min_idx && sort_method(min, aj) > 0) {
         min_idx = j
       }
     }
