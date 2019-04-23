@@ -10,13 +10,14 @@ const selection_sort = (A, sort_method = num_ascending) => {
   for (let i = 0; i < A.length - 1; i++) {
     let min_idx = null
     for (let j = i; j < A.length; j++) {
-      if (!min_idx) {
+      if (min_idx === null) {
         min_idx = j
-      }
-      let [min, aj] = [+A[min_idx], +A[j]]
-      console.log(`min = ${min}, aj = ${aj}`)
-      if (min_idx && aj < min) {
-        min_idx = j
+      } else {
+        let [min, aj] = [+A[min_idx], +A[j]]
+        console.log(`min = ${min}, aj = ${aj}`)
+        if (min_idx && aj < min) {
+          min_idx = j
+        }
       }
     }
     if (min_idx) {
