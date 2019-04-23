@@ -9,6 +9,8 @@ describe('Merge sort without sentinal test', () => {
       let arr = [...data]
       let sorted = [...data].sort(num_ascending)
       merge_sort(arr)
+      console.log(`arr = ${JSON.stringify(arr)}`)
+      console.log(`sorted = ${JSON.stringify(sorted)}`)
       for (let i = 1; i < arr.length; i++) {
         assert(arr[i] >= arr[i-1])
         assert(arr[i] === sorted[i])
