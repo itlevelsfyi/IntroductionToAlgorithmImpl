@@ -1,7 +1,7 @@
 const assert = require('assert')
 const binary_search = require('../../src/chapter_1/binary_search')
 
-describe('Binary search test, () => {
+describe('Binary search test', () => {
   it('Find existing item and return correct index', done => {
     let data = [1,2,3,4,5,6]
     let idx = binary_search(data, 3)
