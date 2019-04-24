@@ -3,8 +3,8 @@ const insertion_sort = require('../../src/chapter_1/insertion_sort_recursive')
 const sort_data = require('../sort_data/sort_data')
 const num_ascending = require('../sort_data/num_ascending')
 
-describe('Basic Sort Test', () => {
-  it('Basic case', done => {
+describe('Insertion sort recursive version test', () => {
+  it('Basic test', done => {
     sort_data.forEach(data => {
       let arr = [...data]
       let sorted = [...data].sort(num_ascending)
