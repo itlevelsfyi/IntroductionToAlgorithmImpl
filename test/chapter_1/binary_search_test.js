@@ -1,7 +1,5 @@
 const assert = require('assert')
 const binary_search = require('../../src/chapter_1/binary_search')
-const sort_data = require('../sort_data/sort_data')
-const num_ascending = require('../sort_data/num_ascending')
 
 describe('Binary search test, () => {
   it('Find existing item and return correct index', done => {
