@@ -1,28 +1,21 @@
 insertion_sort = A => {
   const binary_search_insert_point = (A, left, right, elem) => {
-    if (elem < A[left]) {
-      return left
-    } else if (elem > A[right]) {
-      return right + 1
-    }
-    let pos = Math.floor((left + right) / 2)
-    if (left <= right) {
-      let l = left
-      let r = right
-      while (l <= r) {
-        if (elem >= A[r]) {
-          return r + 1
-        } else if (elem <= A[l]) {
-          return l
-        }
-        pos = Math.floor((l+r) / 2)
-        if (elem === A[pos]) {
-          return pos
-        } else if (elem < A[pos]) {
-          r = pos - 1
-        } else {
-          l = pos + 1
-        }
+    let l = left
+    let r = right
+    let pos = Math.floor((l + r) / 2)
+    while (l <= r) {
+      if (elem >= A[r]) {
+        return r + 1
+      } else if (elem <= A[l]) {
+        return l
+      }
+      pos = Math.floor((l+r) / 2)
+      if (elem === A[pos]) {
+        return pos
+      } else if (elem < A[pos]) {
+        r = pos - 1
+      } else {
+        l = pos + 1
       }
     }
     return pos
