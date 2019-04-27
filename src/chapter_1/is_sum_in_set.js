@@ -7,29 +7,29 @@
 const merge = (A, p, q, r) => {
   let n1 = q-p+1
   let n2 = r-q
-  let l = []
+  let L = []
   for (let i = 0; i < n1; i++) {
-    l.push(A[p+i])
+    L.push(A[p+i])
   }
-  let r = []
+  let R = []
   for (let j = 0; j < n2; j++) {
-    r.push(A[q+1+j])
+    R.push(A[q+1+j])
   }
   let i = 0
   let j = 0
   let k = p
   while (i < n1 && j < n2 && k <= r) {
     if (l[i] < r[j]) {
-      A[k++] = l[i++]
+      A[k++] = L[i++]
     } else {
-      A[k++] = r[j++]
+      A[k++] = R[j++]
     }
   }
   while (i<n1) {
-    A[k++] = l[i++]
+    A[k++] = L[i++]
   }
   while (j<n2) {
-    A[k++] = r[j++]
+    A[k++] = R[j++]
   }
 }
 
