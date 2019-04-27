@@ -18,7 +18,7 @@ const merge = (A, p, q, r) => {
   let i = 0
   let j = 0
   let k = p
-  while (i < n1 && j < n2 && k <= q) {
+  while (i < n1 && j < n2 && k <= r) {
     if (l[i] < r[j]) {
       A[k++] = l[i++]
     } else {
@@ -66,7 +66,7 @@ const is_sum_in_set = (S, x) => {
   merge_sort(S)
   for (let i = 0; i < S.length; i++) {
     const idx = binary_search(S, x-S[i])
-    if (idx > -1) {
+    if (idx > -1 && idx != i) {
       return idx
     }
   }
