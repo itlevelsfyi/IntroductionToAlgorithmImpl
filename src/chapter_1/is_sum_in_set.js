@@ -19,7 +19,7 @@ const merge = (A, p, q, r) => {
   let j = 0
   let k = p
   while (i < n1 && j < n2 && k <= r) {
-    if (l[i] < r[j]) {
+    if (L[i] < R[j]) {
       A[k++] = L[i++]
     } else {
       A[k++] = R[j++]
