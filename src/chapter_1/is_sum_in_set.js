@@ -72,3 +72,4 @@ const is_sum_in_set = (S, x) => {
   }
   return -1
 }
+module.exports = is_sum_in_set
