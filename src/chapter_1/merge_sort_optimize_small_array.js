@@ -48,7 +48,7 @@ const merge = (A,p,q,r) => {
 
 const merge_sort_impl = (A,p,r) => {
   if (p < r) {
-    const q = Math.floor((q+r)/2)
+    const q = Math.floor((p+r)/2)
     if (q-p+1 <= K) {
       insertion_sort(A,p,q)
     } else {
