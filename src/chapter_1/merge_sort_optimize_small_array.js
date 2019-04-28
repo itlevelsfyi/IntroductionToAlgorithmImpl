@@ -26,7 +26,7 @@ const merge = (A,p,q,r) => {
   }
   let R = []
   for (let j = 0; j < n2; j++) {
-    R.push(A[q+1+j]
+    R.push(A[q+1+j])
   }
   let i = 0
   let j = 0
