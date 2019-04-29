@@ -10,7 +10,7 @@ const pow = (x, n) => {
 horner_rule_naive = (A, x) => {
   let y = 0
   for (let i = 0; i < A.length; i++) {
-    y += (A[i] * pow(x,i)
+    y += (A[i] * pow(x,i))
   }
   return y
 }
