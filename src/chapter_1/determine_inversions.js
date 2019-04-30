@@ -46,4 +46,4 @@ const determine_inversions = A => {
   return determine_inversions_impl(A,0,A.length-1)
 }
 
-module.exports = determine_inversion
+module.exports = determine_inversions
