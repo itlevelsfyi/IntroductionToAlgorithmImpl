@@ -10,6 +10,7 @@ describe('Determine Inversions Tests', () => {
   })
   it('No inversions for already sorted array', done => {
     let A = [1,2,3,5,8,10]
+    console.log(determine_inversions(A))
     assert(determine_inversions(A), 0)
     done()
   })
