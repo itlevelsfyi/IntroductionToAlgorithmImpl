@@ -39,3 +39,5 @@ const find_maximum_subarray = (A,low,high) => {
     }
   }
 }
+
+module.exports = find_maximum_subarray
