@@ -15,8 +15,8 @@ describe('Find maximum subarray test', () => {
     let data = [-13,-3,-25,-20,-3,-16,-23,-18,-20,-7,-12,-5,-22,-15,-4,-7]
     let [max_left, max_right, max] = find_maximum_subarray(data)
     console.log(`max_left=${max_left}, max_right=${max_right}, max =${max}`)
-    assert(max_left == 4)
-    assert(max_right == 4)
+    assert(max_left == 1)
+    assert(max_right == 1)
     assert(max == -3)
     done()
   })
