@@ -22,13 +22,13 @@ const find_cross_maximum_subarray = (A,low,mid,high) => {
   return [max_left, max_right, left_sum+right_sum]
 }
 
-const find_maximum_subarray = (A,low,high) => {
+const find_maximum_subarray_impl = (A,low,high) => {
   if (low === high) {
     return [low,high,A[low]]
   } else {
     const mid = Math.floor((low+high)/2)
-    let [left_low, left_high, left_max] = find_maximum_subarray(A,low,mid)
-    let [right_low, right_high, right_max] = find_maximum_subarray(A,mid+1,high)
+    let [left_low, left_high, left_max] = find_maximum_subarray_impl(A,low,mid)
+    let [right_low, right_high, right_max] = find_maximum_subarray_impl(A,mid+1,high)
     let [cross_low, cross_high, cross_max] = find_cross_maximum_subarray(A,low,mid,high)
     if (left_max >= right_max && left_max >= cross_max) {
       return [left_low, left_high, left_max]
@@ -38,6 +38,10 @@ const find_maximum_subarray = (A,low,high) => {
       return [cross_low, cross_high, cross_max]
     }
   }
+}
+
+const find_maximum_subarray = A => {
+  return find_maximum_subarray_impl(A,0,A.length-1)
 }
 
 module.exports = find_maximum_subarray
