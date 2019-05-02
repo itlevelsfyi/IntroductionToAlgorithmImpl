@@ -20,6 +20,7 @@ const find_maximum_subarray = A => {
       max = sum
     } 
   }
+  return [max_start, max_end, max]
 }
 
 module.exports = find_maximum_subarray
