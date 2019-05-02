@@ -1,4 +1,4 @@
-const find_maximum_subarray = A => {
+const find_maximum_subarray_linear = A => {
   let max_start = -1
   let max_end = -1
   let max = -Infinity
