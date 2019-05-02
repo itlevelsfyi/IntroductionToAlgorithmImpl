@@ -1,8 +1,8 @@
 const assert = require('assert')
 const find_maximum_subarray = require('../../src/chapter_4/maximum_subarray_linear')
 
-describe('Find maximum subarray test', () => {
-  it('find maximum sub array test', done => {
+describe('Linear find maximum subarray test', () => {
+  it('linear find maximum sub array test', done => {
     let data = [13,-3,-25,20,-3,-16,-23,18,20,-7,12,-5,-22,15,-4,7]
     let [max_left, max_right, max] = find_maximum_subarray(data)
     console.log(`max_left=${max_left}, max_right=${max_right}, max =${max}`)
@@ -11,7 +11,7 @@ describe('Find maximum subarray test', () => {
     assert(max == 43)
     done()
   })
-  it('All neg ones in array, find the biggest one', done => {
+  it('Linear: all neg ones in array, find the biggest one', done => {
     let data = [-13,-3,-25,-20,-3,-16,-23,-18,-20,-7,-12,-5,-22,-15,-4,-7]
     let [max_left, max_right, max] = find_maximum_subarray(data)
     console.log(`max_left=${max_left}, max_right=${max_right}, max =${max}`)
