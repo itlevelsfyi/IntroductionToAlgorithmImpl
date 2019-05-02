@@ -23,4 +23,4 @@ const find_maximum_subarray = A => {
   return [max_start, max_end, max]
 }
 
-module.exports = find_maximum_subarray
+module.exports = find_maximum_subarray_linear
