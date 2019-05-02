@@ -14,6 +14,7 @@ const find_maximum_subarray_linear = A => {
         curr_start = i
       }
     }
+    console.log(`i = ${i}, A[i] = ${A[i]}, sum = ${sum}, max = ${max}`)
     if (sum > max) {
       max_start = curr_start > -1 ? curr_start : i
       max_end = i
