@@ -7,19 +7,20 @@ const find_maximum_subarray_linear = A => {
   for (let i = 0; i < A.length; i++) {
     sum += A[i]
     if (sum < 0) {
-       sum = 0
        curr_start = -1
     } else {
       if (curr_start < 0) {
         curr_start = i
       }
     }
-    console.log(`i = ${i}, A[i] = ${A[i]}, sum = ${sum}, max = ${max}`)
     if (sum > max) {
       max_start = curr_start > -1 ? curr_start : i
       max_end = i
       max = sum
     } 
+    if (sum < 0) {
+      sum = 0
+    }
   }
   return [max_start, max_end, max]
 }
