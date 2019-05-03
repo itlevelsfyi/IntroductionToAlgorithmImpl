@@ -81,6 +81,19 @@ exports.add_ref = (objA, objB) => {
   return make_ref(C)
 }
 
+exports.paste = (objA, objB, start_row, start_col) => {
+  let A = make_ref(objA)
+  let B = make_ref(objB)
+  // paste B into A, starting at (start_row, start_col)
+  let nrow = B.row_count()
+  let ncol = B.col_count()
+  for (let i = 0; i < nrow; i++) {
+    for (let j = 0; j < ncol; j++) {
+      A.set(start_row + i, start_col + j, B.at(i,j))
+    }
+  }
+}
+
 exports.partition_ref = objA => {
   let A = make_ref(objA)
   // assume nrow is pow of 2
