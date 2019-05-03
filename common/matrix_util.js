@@ -59,3 +59,26 @@ exports.add_ref = (A, B) => {
   }
   return make_ref(C)
 }
+
+exports.partition_ref = obj => {
+  let A = obj
+  if (Array.isArray(obj)) {
+    A = make_ref(obj)
+  }
+  // assume nrow is pow of 2
+  const nrow = A.row_count()
+  const ncol = A.col_count()
+  const half_row = Math.floor(nrow / 2)
+  const half_col = Math.floor(ncol / 2)
+  // A11: [0,0,half_row,half_col]
+  // A12: [0,half_col, half_row, half_col]
+  // A21: [hafl_row, 0, half_row, half_col]
+  // A22: [half_row, half_col, half_row, half_col]
+  let result = []
+  for (let i = 0; i <= 1; i++) {
+    for (let j = 0; j <= 1; j++) {
+      result.push(ref_matrix(A, i * half_row, j * half_col, half_row, half_col))
+    }
+  }
+  return result
+}
