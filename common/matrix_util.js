@@ -11,6 +11,12 @@ exports.make_matrix = (nrow, ncol) => {
 }
 
 exports.ref_matrix = (A, start_row, start_col, nrow, ncol) => {
+  if (!Array.isArray(A)) {
+    const at = (row, col) => A.at(start_row+row, start_col+col)
+    const row_count = () => nrow
+    const col_count = () => ncol
+    return { at, nrow, ncol }
+  }
   const at = (row, col) => {
     return A[start_row + row][start_col + col]
   }
@@ -20,6 +26,9 @@ exports.ref_matrix = (A, start_row, start_col, nrow, ncol) => {
 }
 
 exports.make_ref = A => {
+  if (!Array.isArray(A)) {
+    return A
+  }
   const at = (row, col) => {
     return A[row][col]
   }
@@ -35,6 +44,9 @@ exports.make_ref = A => {
 }
 
 exports.make_standalone = ref_matrix => {
+  if (Array.isArray(ref_matrix)) {
+    return ref_matrix
+  }
   const n = ref_matrix.row_count
   const ncol = ref_matrix.col_count
   let A = []
@@ -48,7 +60,9 @@ exports.make_standalone = ref_matrix => {
   return A
 }
 
-exports.add_ref = (A, B) => {
+exports.add_ref = (objA, objB) => {
+  let A = make_ref(objA)
+  let B = make_ref(objB)
   let nrow = A.row_count()
   let ncol = A.col_count()
   let C = make_matrix(nrow, ncol)
@@ -60,11 +74,8 @@ exports.add_ref = (A, B) => {
   return make_ref(C)
 }
 
-exports.partition_ref = obj => {
-  let A = obj
-  if (Array.isArray(obj)) {
-    A = make_ref(obj)
-  }
+exports.partition_ref = objA => {
+  let A = make_ref(objA)
   // assume nrow is pow of 2
   const nrow = A.row_count()
   const ncol = A.col_count()
