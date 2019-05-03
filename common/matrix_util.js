@@ -47,3 +47,15 @@ exports.make_standalone = ref_matrix => {
   }
   return A
 }
+
+exports.add_ref = (A, B) => {
+  let nrow = A.row_count()
+  let ncol = A.col_count()
+  let C = make_matrix(nrow, ncol)
+  for (let i = 0; i < nrow; i++) {
+    for (let j = 0; j < ncol; j++) {
+      C[i][j] = A.at(i,j) + B.at(i,j)
+    }
+  }
+  return make_ref(C)
+}
