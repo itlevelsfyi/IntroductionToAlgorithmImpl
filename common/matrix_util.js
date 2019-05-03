@@ -15,14 +15,18 @@ exports.ref_matrix = (A, start_row, start_col, nrow, ncol) => {
     const at = (row, col) => A.at(start_row+row, start_col+col)
     const row_count = () => nrow
     const col_count = () => ncol
-    return { at, nrow, ncol }
+    const set = (row, col, val) => A.set(start_row+row, start_col+col, val)
+    return { at, set, nrow, ncol }
   }
   const at = (row, col) => {
     return A[start_row + row][start_col + col]
   }
+  const set = (row, col, val) => {
+    return A[start_row + row][start_col + col] = val
+  }
   const row_count = () => nrow
   const col_count = () => ncol
-  return { at, row_count, col_count }
+  return { at, set, row_count, col_count }
 }
 
 exports.make_ref = A => {
@@ -32,6 +36,9 @@ exports.make_ref = A => {
   const at = (row, col) => {
     return A[row][col]
   }
+  const set = (row, col, val) => {
+    A[row][col] = val
+  }
   const row_count = () => A.length
   const col_count = () => {
     if (A.length > 0) {
@@ -40,7 +47,7 @@ exports.make_ref = A => {
       return 0
     }
   }
-  return { at, row_count, col_count }
+  return { at, set, row_count, col_count }
 }
 
 exports.make_standalone = ref_matrix => {
