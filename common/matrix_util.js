@@ -113,3 +113,26 @@ exports.partition_ref = objA => {
   }
   return result
 }
+
+exports.compareMatrix = (mA,mB) => {
+  let A = make_ref(mA)
+  let B = make_ref(mB)
+  let nrowA = A.row_count
+  let nrowB = B.row_count
+  if (nrowA !== nrowB) {
+    return false
+  }
+  let ncolA = A.col_count
+  let ncolB = B.col_count
+  if (ncolA !== ncolB) {
+    return false
+  }
+  for (let i = 0; i < nrowA; i++) {
+    for (let j = 0; j < ncolA; j++) {
+      if (A.at(i,j) !== B.at(i,j)) {
+        return false
+      }
+    }
+  }
+  return true
+}
