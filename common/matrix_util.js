@@ -132,6 +132,7 @@ exports.compareMatrix = (mA,mB) => {
   for (let i = 0; i < nrowA; i++) {
     for (let j = 0; j < ncolA; j++) {
       if (A.at(i,j) !== B.at(i,j)) {
+        console.log(`A[${i}][${j}] = ${A.at(i,j)}, B[${i}][${j}] = ${B.at(i,j)}`)
         return false
       }
     }
