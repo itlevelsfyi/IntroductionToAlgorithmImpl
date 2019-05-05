@@ -54,8 +54,8 @@ exports.make_standalone = ref_matrix => {
   if (Array.isArray(ref_matrix)) {
     return ref_matrix
   }
-  const n = ref_matrix.row_count
-  const ncol = ref_matrix.col_count
+  const n = ref_matrix.row_count()
+  const ncol = ref_matrix.col_count()
   let A = []
   for (let i = 0; i < n; i++) {
     let row = []
