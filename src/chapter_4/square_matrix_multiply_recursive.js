@@ -3,6 +3,7 @@ const matrix_util = require('../../common/matrix_util')
 const square_matrix_multiply_recursive_impl = (objA,objB) => {
   let A = matrix_util.make_ref(objA)
   let B = matrix_util.make_ref(objB)
+  console.log(A)
   const n = A.row_count()
   let C = matrix_util.make_matrix(n,n)
   let halfn = Math.floor(n/2)
