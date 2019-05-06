@@ -68,22 +68,22 @@ exports.make_standalone = ref_matrix => {
 }
 
 exports.add_ref = (objA, objB) => {
-  let A = make_ref(objA)
-  let B = make_ref(objB)
+  let A = this.make_ref(objA)
+  let B = this.make_ref(objB)
   let nrow = A.row_count()
   let ncol = A.col_count()
-  let C = make_matrix(nrow, ncol)
+  let C = this.make_matrix(nrow, ncol)
   for (let i = 0; i < nrow; i++) {
     for (let j = 0; j < ncol; j++) {
       C[i][j] = A.at(i,j) + B.at(i,j)
     }
   }
-  return make_ref(C)
+  return this.make_ref(C)
 }
 
 exports.paste = (objA, objB, start_row, start_col) => {
-  let A = make_ref(objA)
-  let B = make_ref(objB)
+  let A = this.make_ref(objA)
+  let B = this.make_ref(objB)
   // paste B into A, starting at (start_row, start_col)
   let nrow = B.row_count()
   let ncol = B.col_count()
@@ -95,7 +95,7 @@ exports.paste = (objA, objB, start_row, start_col) => {
 }
 
 exports.partition_ref = objA => {
-  let A = make_ref(objA)
+  let A = this.make_ref(objA)
   // assume nrow is pow of 2
   const nrow = A.row_count()
   const ncol = A.col_count()
@@ -108,7 +108,7 @@ exports.partition_ref = objA => {
   let result = []
   for (let i = 0; i <= 1; i++) {
     for (let j = 0; j <= 1; j++) {
-      result.push(ref_matrix(A, i * half_row, j * half_col, half_row, half_col))
+      result.push(this.ref_matrix(A, i * half_row, j * half_col, half_row, half_col))
     }
   }
   return result
