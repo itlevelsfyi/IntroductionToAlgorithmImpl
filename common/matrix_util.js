@@ -68,14 +68,18 @@ exports.make_standalone = ref_matrix => {
 }
 
 exports.add_ref = (objA, objB) => {
-  let A = this.make_ref(objA)
-  let B = this.make_ref(objB)
+  return this.apply_elem_fn(objA, objB, (a,b) => { return a+b })
+}
+
+exports.apply_elem_fn = (mxA, mxB, fn) => {
+  let A = this.make_ref(mxA)
+  let B = this.make_ref(mxB)
   let nrow = A.row_count()
   let ncol = A.col_count()
   let C = this.make_matrix(nrow, ncol)
   for (let i = 0; i < nrow; i++) {
     for (let j = 0; j < ncol; j++) {
-      C[i][j] = A.at(i,j) + B.at(i,j)
+      C[i][j] = fn(A.at(i,j), B.at(i,j))
     }
   }
   return this.make_ref(C)
