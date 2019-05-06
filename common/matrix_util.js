@@ -16,7 +16,7 @@ exports.ref_matrix = (A, start_row, start_col, nrow, ncol) => {
     const row_count = () => nrow
     const col_count = () => ncol
     const set = (row, col, val) => A.set(start_row+row, start_col+col, val)
-    return { at, set, nrow, ncol }
+    return { at, set, row_count, col_count }
   }
   const at = (row, col) => {
     return A[start_row + row][start_col + col]
