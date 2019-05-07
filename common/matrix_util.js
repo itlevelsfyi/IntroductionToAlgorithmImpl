@@ -143,3 +143,53 @@ exports.compareMatrix = (mA,mB) => {
   }
   return true
 }
+
+exports.matrix_ops = ops => {
+  let left = null
+  let right = null
+  let op = null
+  if (!Array.isArray(ops)) {
+    return ops
+  }
+  if (ops.length === 1) {
+    return ops[0]
+  }
+  if (ops.length === 2) {
+    return ops[0]
+  }
+  if (ops.length > 2) {
+    for (let i = 0; i < ops.length; i++) {
+      let item = ops[i]
+      if (item === '+' || item === '-') {
+        op = item
+      } else {
+        if (left === null) {
+          left = item
+        } else if (right === null) {
+          right = item
+        }
+      }
+      // check if can reduce result
+      const canReduce = (left !== null) && (right !== null) && (op !== null)
+      if (canReduce) {
+        const add = (a,b) => a+b
+        const minus = (a,b) => a-b
+        let operand = null
+        if (op === '+') {
+          operand = add
+        } else if (op === '-') {
+          operand = minus
+        }
+        let r = left
+        if (operand !== null) {
+          r = this.apply_elem_fn(left, right, operand)
+        }
+        // cleanup
+        left = r
+        right = null
+        op = null
+      }
+    }
+  }
+  return left
+}
