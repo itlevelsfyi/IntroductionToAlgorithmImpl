@@ -79,7 +79,7 @@ exports.apply_elem_fn = (mxA, mxB, fn) => {
   let C = this.make_matrix(nrow, ncol)
   for (let i = 0; i < nrow; i++) {
     for (let j = 0; j < ncol; j++) {
-      C[i][j] = fn(A.at(i,j), B.at(i,j))
+      C.set(i, j, fn(A.at(i,j), B.at(i,j)))
     }
   }
   return this.make_ref(C)
