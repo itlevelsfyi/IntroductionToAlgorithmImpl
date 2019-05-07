@@ -7,7 +7,7 @@ const square_matrix_multiply_recursive_impl = (objA,objB) => {
   let C = matrix_util.make_matrix(n,n)
   let halfn = Math.floor(n/2)
   if (n === 1) {
-    C[0][0] = A.at(0,0) * B.at(0,0)
+    C.set(0, 0, A.at(0,0) * B.at(0,0))
   } else {
     let [A11,A12,A21,A22] = matrix_util.partition_ref(A)
     let [B11,B12,B21,B22] = matrix_util.partition_ref(B)
