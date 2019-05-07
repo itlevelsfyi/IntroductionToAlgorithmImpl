@@ -1,4 +1,4 @@
-exports.make_matrix = (nrow, ncol) => {
+exports.make_matrix = (nrow, ncol, is_ref = true) => {
   let A = []
   for (let i = 0; i < nrow; i++) {
     let row = []
@@ -7,7 +7,7 @@ exports.make_matrix = (nrow, ncol) => {
     }
     A.push(row)
   }
-  return A
+  return is_ref ? this.make_ref(A) : A
 }
 
 exports.ref_matrix = (A, start_row, start_col, nrow, ncol) => {
